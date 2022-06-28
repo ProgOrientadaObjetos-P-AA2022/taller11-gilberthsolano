@@ -31,7 +31,7 @@ public class MenuEconomico extends Menu {
     }
 
     @Override
-    public void calcularvalorcancelartotal() {
+    public void calcularvalorMenuTotal() {
         valorMenu = valorinicialMenu - porcentajeDescuento;
     }
 

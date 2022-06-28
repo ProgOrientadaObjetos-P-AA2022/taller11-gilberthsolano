@@ -39,7 +39,7 @@ public class MenudelDia extends Menu{
     
     
     @Override
-    public void calcularvalorcancelartotal() {
+    public void calcularvalorMenuTotal() {
         valorMenu=valorinicialMenu+valorPostre+valorBebida;
     }
     public double obtenerValorcancelartotal(){

@@ -47,7 +47,7 @@ public class MenuCarta extends Menu{
         return porcentajeAdicional;
     }
     @Override
-    public void calcularvalorcancelartotal() {
+    public void calcularvalorMenuTotal() {
      valorMenu=(valorinicialMenu+valorporciondeGuarnicion+valorBebida)+porcentajeAdicional;
         
     }

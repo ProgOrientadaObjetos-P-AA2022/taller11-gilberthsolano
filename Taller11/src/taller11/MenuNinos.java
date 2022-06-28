@@ -38,7 +38,7 @@ public class MenuNinos extends Menu{
     
 
     @Override
-    public void calcularvalorcancelartotal() {
+    public void calcularvalorMenuTotal() {
         valorMenu=valorinicialMenu+valorPorcionHelada+valorPorcionPastel;
     }
     public double obtenervalorcancelartotal(){
