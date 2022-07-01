@@ -11,6 +11,7 @@ package taller11;
 public class MenuEconomico extends Menu {
 
     private double porcentajeDescuento;
+    private double porcentajeDescuentoFijo=25;
 
     public MenuEconomico() {
 
@@ -21,6 +22,23 @@ public class MenuEconomico extends Menu {
         
 
     }
+
+    public double getPorcentajeDescuento() {
+        return porcentajeDescuento;
+    }
+
+    public void setPorcentajeDescuento(double porcentajeDescuento) {
+        this.porcentajeDescuento = porcentajeDescuento;
+    }
+
+    public double getPorcentajeDescuentoFijo() {
+        return porcentajeDescuentoFijo;
+    }
+
+    public void setPorcentajeDescuentoFijo(double porcentajeDescuentoFijo) {
+        this.porcentajeDescuentoFijo = porcentajeDescuentoFijo;
+    }
+    
 
     public double obtenerPorcentajeDescuento() {
         return porcentajeDescuento;
@@ -43,9 +61,9 @@ public class MenuEconomico extends Menu {
     public String toString() {
         String cadena = String.format("Menu Economico\n%s", super.toString());
         cadena = String.format("%s"
-                + "Porcentaje descuento%.2f\n"
-                + "Valor Menu:%.2f\n", cadena,
-                obtenerPorcentajeDescuento(),
+                + "\tPorcentaje descuento%.2f\n"
+                + "\tValor Menu:%.2f\n", cadena,
+                getPorcentajeDescuentoFijo(),
                 obtenerValorMenu());
         return cadena;
     }

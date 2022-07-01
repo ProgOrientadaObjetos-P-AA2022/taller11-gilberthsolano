@@ -16,19 +16,28 @@ public class CuentaM {
     private ArrayList<Menu> listamenu = new ArrayList<>();
     private double valorCancelar;
     private double subtotal;
-    private double iva = 0.12;
-    private int id;
+    private double iva = 0.10;
+    private double ivafijo=10;//*
+    private String id;
 
     public CuentaM() {
 
     }
 
-    public int obtenerId() {
+    public String obtenerId() {
         return id;
     }
 
-    public void establecerId(int id) {
+    public void establecerId(String id) {
         this.id = id;
+    }
+
+    public double getIvafijo() {
+        return ivafijo;
+    }
+
+    public void setIvafijo(double ivafijo) {
+        this.ivafijo = ivafijo;
     }
 
     public void establecerNombreCliente(String nombreCliente) {
@@ -78,12 +87,12 @@ public class CuentaM {
 
     @Override
     public String toString() {
-        String cadena = String.format("Datos Cuenta\n"
-                + "Nombre cliente:%s\n", obtenerNombreCliente());
+        String cadena = String.format("Factura\n"
+                + "Cliente:%s\n", obtenerNombreCliente());
         for (int i = 0; i < obtenerListamenu().size(); i++) {
             cadena = String.format("%s"
-                    + "%d "
-                    + "%s\n", cadena,(i+1),
+                
+                    + "%s\n", cadena,
                     obtenerListamenu().get(i));
 
         }
@@ -92,7 +101,7 @@ public class CuentaM {
                 + "Iva:%.2f\n"
                 + "Total a pagar:%.2f\n", cadena,
                 obtenerSubtotal(),
-                obtenerIva(),
+                getIvafijo(),
                 obtenerValorCancelar());
         return cadena;
     }
