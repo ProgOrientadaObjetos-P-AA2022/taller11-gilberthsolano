@@ -12,7 +12,6 @@ public class MenuCarta extends Menu{
     private double valorporciondeGuarnicion;
     private double valorBebida;
     private double porcentajeAdicional;//en relacion del valor inicial del menu
-    private double porcentajeAdicionalFijo=10;
     public MenuCarta(){
         
     }
@@ -23,13 +22,13 @@ public class MenuCarta extends Menu{
         
     }
 
-    public double getPorcentajeAdicionalFijo() {
-        return porcentajeAdicionalFijo;
-    }
-
-    public void setPorcentajeAdicionalFijo(double porcentajeAdicionalFijo) {
-        this.porcentajeAdicionalFijo = porcentajeAdicionalFijo;
-    }
+//    public double getPorcentajeAdicionalFijo() {
+//        return porcentajeAdicionalFijo;
+//    }
+//
+//    public void setPorcentajeAdicionalFijo(double porcentajeAdicionalFijo) {
+//        this.porcentajeAdicionalFijo = porcentajeAdicionalFijo;
+//    }
     
     public void establecerValorporciondeGuarnicion(double valorporciondeGuarnicion) {
         this.valorporciondeGuarnicion = valorporciondeGuarnicion;
@@ -40,7 +39,7 @@ public class MenuCarta extends Menu{
     }
 
     public void establecerPorcentajeAdicional(double porcentajeAdicional) {
-        this.porcentajeAdicional = ((porcentajeAdicional*valorinicialMenu))/100;
+        this.porcentajeAdicional = porcentajeAdicional;
     }
 
     public double obtenerValorporciondeGuarnicion() {
@@ -56,7 +55,7 @@ public class MenuCarta extends Menu{
     }
     @Override
     public void calcularvalorMenuTotal() {
-     valorMenu=(valorinicialMenu+valorporciondeGuarnicion+valorBebida)+porcentajeAdicional;
+     valorMenu=(valorinicialMenu+valorporciondeGuarnicion+valorBebida)+(((porcentajeAdicional*valorinicialMenu))/100);
         
     }
     public double obtenervalorcancelartotal(){
@@ -67,13 +66,13 @@ public class MenuCarta extends Menu{
     public String toString() {
         String cadena=String.format("Menu a la carta\n%s",super.toString());
         cadena=String.format("%s"
-                + "\tValor porcion guarnicion:%.2f\n"
-                + "\tValor bebida:%.2f\n"
-                + "\tPorcentaje Adicional:%.2f\n"
-                + "\tValor menu:%.2f\n", cadena,
+                + "Valor porcion guarnicion:%.2f\n"
+                + "Valor bebida:%.2f\n"
+                + "Porcentaje Adicional:%.2f\n"
+                + "Valor menu:%.2f\n", cadena,
                 obtenerValorporciondeGuarnicion(),
                 obtenerValorBebida(),
-                getPorcentajeAdicionalFijo(),
+                obtenerPorcentajeAdicional(),
                 obtenerValorMenu());
         return cadena;
     }

@@ -11,7 +11,7 @@ package taller11;
 public class MenuEconomico extends Menu {
 
     private double porcentajeDescuento;
-    private double porcentajeDescuentoFijo=25;
+   
 
     public MenuEconomico() {
 
@@ -23,34 +23,34 @@ public class MenuEconomico extends Menu {
 
     }
 
-    public double getPorcentajeDescuento() {
-        return porcentajeDescuento;
-    }
+//    public double getPorcentajeDescuento() {
+//        return porcentajeDescuento;
+//    }
+//
+//    public void setPorcentajeDescuento(double porcentajeDescuento) {
+//        this.porcentajeDescuento = porcentajeDescuento;
+//    }
 
-    public void setPorcentajeDescuento(double porcentajeDescuento) {
-        this.porcentajeDescuento = porcentajeDescuento;
-    }
-
-    public double getPorcentajeDescuentoFijo() {
-        return porcentajeDescuentoFijo;
-    }
-
-    public void setPorcentajeDescuentoFijo(double porcentajeDescuentoFijo) {
-        this.porcentajeDescuentoFijo = porcentajeDescuentoFijo;
-    }
-    
+//    public double getPorcentajeDescuentoFijo() {
+//        return porcentajeDescuentoFijo;
+//    }
+//
+//    public void setPorcentajeDescuentoFijo(double porcentajeDescuentoFijo) {
+//        this.porcentajeDescuentoFijo = porcentajeDescuentoFijo;
+//    }
+//    
 
     public double obtenerPorcentajeDescuento() {
         return porcentajeDescuento;
     }
 
     public void establecerPorcentajeDescuento(double porcentajeDesc) {
-        porcentajeDescuento = ((porcentajeDesc * valorinicialMenu)) / 100;
+        porcentajeDescuento = porcentajeDesc;
     }
 
     @Override
     public void calcularvalorMenuTotal() {
-        valorMenu = valorinicialMenu - porcentajeDescuento;
+        valorMenu = valorinicialMenu - (((porcentajeDescuento * valorinicialMenu)) / 100);
     }
 
     public double obtenervalorcancelartotal() {
@@ -61,9 +61,9 @@ public class MenuEconomico extends Menu {
     public String toString() {
         String cadena = String.format("Menu Economico\n%s", super.toString());
         cadena = String.format("%s"
-                + "\tPorcentaje descuento%.2f\n"
-                + "\tValor Menu:%.2f\n", cadena,
-                getPorcentajeDescuentoFijo(),
+                + "Porcentaje descuento%.2f\n"
+                + "Valor Menu:%.2f\n", cadena,
+                obtenerPorcentajeDescuento(),
                 obtenerValorMenu());
         return cadena;
     }
