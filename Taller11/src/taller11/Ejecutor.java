@@ -19,20 +19,20 @@ public class Ejecutor {
         ArrayList<Menu>listamenu=new ArrayList<>();
         MenuCarta menuCar1= new MenuCarta("Arroz camaron", 2, 1, 2);
         menuCar1.establecerPorcentajeAdicional(10);
-        menuCar1.calcularvalorcancelartotal();
+        menuCar1.calcularvalorMenuTotal();
 //        System.out.println(menuCar1);
         MenudelDia menudia1= new MenudelDia("Fritada", 3, 1, 1);
-        menudia1.calcularvalorcancelartotal();
+        menudia1.calcularvalorMenuTotal();
 //        System.out.println(menudia1);
         MenuNinos menuninos1= new MenuNinos("Big mac", 2, 1, 1);
-        menuninos1.calcularvalorcancelartotal();
+        menuninos1.calcularvalorMenuTotal();
 //        System.out.println(menuninos1);
         MenuNinos menuninos2= new MenuNinos("Nuggets", 3, 1, 1);
-        menuninos2.calcularvalorcancelartotal();
+        menuninos2.calcularvalorMenuTotal();
 //        System.out.println(menuninos2);
         MenuEconomico menuEco1= new MenuEconomico("Carna asada", 4);
         menuEco1.establecerPorcentajeDescuento(10);
-        menuEco1.calcularvalorcancelartotal();
+        menuEco1.calcularvalorMenuTotal();
 //        System.out.println(menuEco1);
         
         listamenu.add(menuCar1);

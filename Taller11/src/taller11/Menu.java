@@ -48,7 +48,7 @@ public abstract class Menu {
         return valorinicialMenu;
     }
 
-    public abstract void calcularvalorcancelartotal();
+    public abstract void calcularvalorMenuTotal();
 
     @Override
     public String toString() {
